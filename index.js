@@ -58,7 +58,7 @@ app.get("/posts/:id",(req,res)=>{
 })
 
 app.patch("/posts/:id",(req,res)=>{
-    let {id} = req.params;
+    let {id} = reqparams;
     let post = posts.find((p) => id === p.id);
     let {newContent} = req.body.content;
     post.content = newContent;
@@ -66,9 +66,10 @@ app.patch("/posts/:id",(req,res)=>{
 })
 
 app.get("/posts/:id/edit",(req,res)=>{
-    let {id} = req.params;
-    let post = posts.find((p) => id === p.id);
-    res.render("edit.ejs",{post});
+    // let {id} = req.params;
+    // let post = posts.find((p) => id === p.id);
+    // res.render("edit.ejs",{post});
+    res.send("This feature is under development");
 })
 
 app.delete("/posts/:id",(req,res)=>{
